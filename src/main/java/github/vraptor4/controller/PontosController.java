@@ -37,7 +37,7 @@ public class PontosController {
     @Path("/save")
     public void insert(PontosTO poi) {
     	pontosRepository.insertPoi(poi);
-    	result.redirectTo("index.jsp");
+    	result.redirectTo("index");
     }
    
     
