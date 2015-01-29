@@ -7,7 +7,7 @@
 <title>Pontos de Interesse</title>
 </head>
 <body>
-        <form id="formPoi" action="/problemaPOI/poi/save" method="post">
+        <form id="formPoiCadastro" action="/problemaPOI/poi/save" method="post">
         	<div id="cadastro" style="float:left">
 	            Cadastrar POI:<br><br>
 	            <input type="text" size="15" id="nome" name="poi.nome" placeholder="Nome" /> <br>
@@ -17,22 +17,24 @@
 	            <input type="submit" value="Cadastrar"  />
             </div>
         </form>
-        <form id="formPoi" action="/problemaPOI/poi/list" method="post">
+        <form id="formPoiListaTodos" action="/problemaPOI/poi/list" method="post">
             <div id="listarTodos" style="float:left;margin-left:20px">
             	Para a listagem completa:<br><br>
             	<input type="submit" value="Listar Todos" />
             </div>
         </form>
         
+        <form id="formPoiListaProximos" action="/problemaPOI/poi/listProximity" method="post">
             <div id="listarProximos" style="float:left;margin-left:20px">
             	Para a listagem por proximidade:<br><br>
-            	<input type="text" size="15" id="coordX" name="coordX" placeholder="Coordenada X" /> <br>
-	            <input type="text" size="15" id="coordY" name="coordY" placeholder="Coordenada Y" /><br>
+            	<input type="text" size="15" id="coordX" name="coordenadaX" placeholder="Coordenada X" /> <br>
+	            <input type="text" size="15" id="coordY" name="coordenadaY" placeholder="Coordenada Y" /><br>
 	            <input type="text" size="15" id="dMax" name="dMax" placeholder="Distancia maxima" /> <br><br>
 	            
 	            
             	<input type="submit" value="Listar Próximos" />
             </div>
+        </form>
         
     </body>
 </html>
