@@ -1,3 +1,5 @@
+//Criação e desenvolvimento:  Lincoln Ávila - 01/2015
+
 package github.vraptor4.model.repository;
 
 import github.vraptor4.model.entity.PontosTO;
@@ -19,6 +21,8 @@ public class PontosRepository {
     private Session session;
  
 	//Método para listar todos
+	//Hibernate ja traz a lista completa por meio do projectionList(), então especifica-se os atributos que necessita pelo Projections.property
+	
     @SuppressWarnings("unchecked")
     public List<PontosTO> list() {
     	Criteria cr = session.createCriteria(PontosTO.class)
@@ -34,6 +38,9 @@ public class PontosRepository {
     }
     
     //Método para listar por proximidade
+    /* Nesse método foi utilizado a listaCompleta que o hibernate traz também, para poder percorrê-la,
+       e fazer a regra da distância com os valores que o usuário digitou, após isso é criado uma Lista de Strings para armazenar o retorno. */
+    
     @SuppressWarnings("unchecked")
     public List<String> listProximity(Integer coordenadaX, Integer coordenadaY, Integer dMax) {
     	
@@ -61,6 +68,7 @@ public class PontosRepository {
     		  return retorno;
     }
     
+    /*No cadastro o hibernate utiliza essa forma bem simples de salvar, onde ele faz o save automatico no banco*/
     public void insertPoi(PontosTO poi) {
         session.save(poi);
       }

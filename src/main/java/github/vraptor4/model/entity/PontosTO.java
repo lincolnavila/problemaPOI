@@ -1,3 +1,5 @@
+//Criação e desenvolvimento:  Lincoln Ávila - 01/2015
+
 package github.vraptor4.model.entity;
 
 import javax.persistence.Entity;
